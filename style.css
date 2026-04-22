@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* LOGIN */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.login-box input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+}
+
+.login-box button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+.container { display: flex; }
+
+.sidebar {
+    width: 200px;
+    background: #020617;
+    padding: 20px;
+}
+
+.main { flex: 1; padding: 20px; }
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.metrics {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* LOGS */
+.logs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logs li {
+    border-bottom: 1px solid #334155;
+    padding: 5px;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(10px);}
+    to {opacity:1;}
+}
