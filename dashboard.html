@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Dashboard</title>
 <link rel="stylesheet" href="style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="dashboard">
@@ -13,35 +16,56 @@
     <aside class="sidebar">
         <h2>CyberShield</h2>
         <nav>
-            <a class="active">Dashboard</a>
-            <a>Alertas</a>
-            <a>Logs</a>
+            <a class="nav-link active" onclick="showSection('dashboard')">Dashboard</a>
+            <a class="nav-link" onclick="showSection('alerts')">Alertas</a>
+            <a class="nav-link" onclick="showSection('logs')">Logs</a>
         </nav>
     </aside>
 
     <main class="content">
 
-        <div class="topbar">
-            <h1>Dashboard</h1>
-            <button onclick="logout()">Logout</button>
-        </div>
+        <!-- DASHBOARD -->
+        <section id="dashboardSection">
 
-        <div class="cards">
-            <div class="card">
-                <h3>Ameaças</h3>
-                <p id="threats">0</p>
+            <div class="topbar">
+                <h1>Dashboard</h1>
+                <button onclick="logout()">Logout</button>
             </div>
 
-            <div class="card">
-                <h3>Eventos</h3>
-                <p id="events">0</p>
-            </div>
-        </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Ameaças</h3>
+                    <p id="threats">0</p>
+                </div>
 
-        <div class="logs">
+                <div class="card">
+                    <h3>Eventos</h3>
+                    <p id="events">0</p>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h3>Atividade</h3>
+                <canvas id="activityChart"></canvas>
+            </div>
+
+        </section>
+
+        <!-- ALERTAS -->
+        <section id="alertsSection" class="hidden">
+            <h2>Alertas</h2>
+            <div class="card">
+                <ul id="alertList"></ul>
+            </div>
+        </section>
+
+        <!-- LOGS -->
+        <section id="logsSection" class="hidden">
             <h2>Logs</h2>
-            <ul id="logList"></ul>
-        </div>
+            <div class="card">
+                <ul id="logList"></ul>
+            </div>
+        </section>
 
     </main>
 

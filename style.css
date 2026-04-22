@@ -1,109 +1,36 @@
-/* RESET */
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-/* ===== LOGIN ===== */
-body.login {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial;
-    background: linear-gradient(135deg, #020617, #0f172a);
-    color: white;
-}
-
-.login-container {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 10px;
-    width: 280px;
-    text-align: center;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-}
-
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #3b82f6;
-    color: white;
-    cursor: pointer;
-}
-
-/* ===== DASHBOARD ===== */
-body.dashboard {
-    font-family: Arial;
-    background: #0f172a;
-    color: white;
-}
-
-.layout {
-    display: flex;
-}
-
-/* SIDEBAR */
-.sidebar {
-    width: 200px;
-    height: 100vh;
-    background: #020617;
-    padding: 20px;
-}
-
+/* HOVER NAV */
 .sidebar a {
     display: block;
     margin: 10px 0;
     color: #94a3b8;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.2s;
 }
 
-.sidebar .active {
+.sidebar a:hover {
+    background: #1e293b;
     color: white;
+    transform: translateX(4px);
 }
 
-/* CONTENT */
-.content {
-    flex: 1;
-    padding: 20px;
+/* BOTÃO hover */
+button {
+    transition: 0.2s;
 }
 
-/* TOPBAR */
-.topbar {
-    display: flex;
-    justify-content: space-between;
+button:hover {
+    background: #2563eb;
+    transform: scale(1.05);
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    gap: 20px;
+/* esconder secções */
+.hidden {
+    display: none;
+}
+
+/* gráfico card */
+.chart-card {
     margin-top: 20px;
-}
-
-.card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-}
-
-/* LOGS */
-.logs {
-    margin-top: 20px;
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.logs li {
-    border-bottom: 1px solid #334155;
-    padding: 5px 0;
 }
