@@ -1,46 +1,36 @@
+/* RESET */
 body {
     margin: 0;
     font-family: Inter, sans-serif;
-    background: linear-gradient(135deg, #020617, #0f172a);
-    color: white;
 }
 
-/* CENTRAR LOGIN */
-.center {
+/* ================= LOGIN ================= */
+.login-page {
+    background: linear-gradient(135deg, #020617, #0f172a);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: white;
 }
 
-/* LOGIN BOX */
 .login-box {
-    background: rgba(30, 41, 59, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(30, 41, 59, 0.9);
     padding: 40px;
     border-radius: 15px;
+    width: 320px;
     text-align: center;
-    width: 300px;
-
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    animation: fadeIn 0.8s ease;
 }
 
-.login-box h2 {
-    margin-bottom: 20px;
-}
-
-/* INPUTS */
 .login-box input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border-radius: 8px;
     border: none;
-    outline: none;
 }
 
-/* BUTTON */
 .login-box button {
     width: 100%;
     padding: 12px;
@@ -49,21 +39,73 @@ body {
     background: linear-gradient(45deg, #38bdf8, #6366f1);
     color: white;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.login-box button:hover {
-    transform: scale(1.05);
+/* ================= DASHBOARD ================= */
+.dashboard-page {
+    display: flex;
+    background: #0f172a;
+    color: white;
 }
 
-/* ERRO */
-#error {
-    color: #ef4444;
-    margin-top: 10px;
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: #020617;
+    padding: 20px;
 }
 
-/* ANIMAÇÃO */
-@keyframes fadeIn {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1;}
+.sidebar nav a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    color: #94a3b8;
+}
+
+.sidebar nav a.active {
+    background: #1e293b;
+    color: white;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* METRICS */
+.metrics {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* CHART */
+.chart {
+    margin-top: 20px;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* LOGS */
+.logs {
+    margin-top: 20px;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
 }
