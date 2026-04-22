@@ -1,13 +1,13 @@
 // LOGIN FAKE
 function login() {
-    const user = document.getElementById("user").value;
-    const pass = document.getElementById("pass").value;
+    const user = document.getElementById("user").value.trim();
+    const pass = document.getElementById("pass").value.trim();
 
-    if (user === "admin" && pass === "1234") {
+    if (user === "admin" && pass === "admin") {
         localStorage.setItem("auth", "true");
         window.location.href = "dashboard.html";
     } else {
-        document.getElementById("error").innerText = "Credenciais inválidas";
+        document.getElementById("error").innerText = "Utilizador ou password errados";
     }
 }
 
