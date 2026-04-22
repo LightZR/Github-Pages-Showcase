@@ -1,13 +1,13 @@
-// LOGIN FAKE
+// LOGIN
 function login() {
-    const user = document.getElementById("user").value.trim();
-    const pass = document.getElementById("pass").value.trim();
+    const user = document.getElementById("user").value;
+    const pass = document.getElementById("pass").value;
 
-    if (user === "admin" && pass === "admin") {
+    if (user === "admin" && pass === "1234") {
         localStorage.setItem("auth", "true");
         window.location.href = "dashboard.html";
     } else {
-        document.getElementById("error").innerText = "Utilizador ou password errados";
+        document.getElementById("error").innerText = "Credenciais erradas";
     }
 }
 
@@ -18,44 +18,23 @@ function logout() {
 }
 
 // PROTEÇÃO
-if (window.location.pathname.includes("dashboard.html")) {
+if (window.location.pathname.includes("dashboard")) {
     if (!localStorage.getItem("auth")) {
         window.location.href = "index.html";
     }
 }
 
-// FETCH FAKE (simulação API)
-async function loadData() {
-    const data = await fetch("https://jsonplaceholder.typicode.com/posts")
-        .then(res => res.json());
+// DADOS SIMULADOS
+function loadData() {
+    document.getElementById("threats").innerText = 12;
+    document.getElementById("events").innerText = 245;
 
-    document.getElementById("threats").innerText = data.length;
-    document.getElementById("events").innerText = data.length * 3;
+    const logs = document.getElementById("logList");
 
-    const logs = document.getElementById("logs");
-
-    data.slice(0,5).forEach(item => {
+    ["Scan completo", "Login admin", "Ameaça bloqueada"].forEach(text => {
         const li = document.createElement("li");
-        li.innerText = item.title;
+        li.innerText = text;
         logs.appendChild(li);
-    });
-}
-
-// CHART
-function loadChart() {
-    const ctx = document.getElementById("chartCanvas");
-
-    if (!ctx) return;
-
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Seg','Ter','Qua','Qui','Sex'],
-            datasets: [{
-                label: 'Ameaças',
-                data: [3,7,5,10,6]
-            }]
-        }
     });
 }
 
@@ -63,6 +42,5 @@ function loadChart() {
 window.onload = () => {
     if (document.getElementById("threats")) {
         loadData();
-        loadChart();
     }
 };

@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="dashboard-page">
 
-<div class="container">
+<body class="dashboard">
 
-<aside class="sidebar">
-    <h2>CyberShield</h2>
-    <nav>
-        <a class="active">Dashboard</a>
-        <a>Alertas</a>
-        <a>Logs</a>
-    </nav>
-</aside>
+<div class="layout">
 
-<main class="main">
+    <aside class="sidebar">
+        <h2>CyberShield</h2>
+        <nav>
+            <a class="active">Dashboard</a>
+            <a>Alertas</a>
+            <a>Logs</a>
+        </nav>
+    </aside>
 
-<header class="topbar">
-    <h1>Dashboard</h1>
-    <button onclick="logout()">Logout</button>
-</header>
+    <main class="content">
 
-<section class="metrics">
-    <div class="card"><h3>Ameaças</h3><p id="threats">...</p></div>
-    <div class="card"><h3>Eventos</h3><p id="events">...</p></div>
-</section>
+        <div class="topbar">
+            <h1>Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+        </div>
 
-<section class="chart">
-    <canvas id="chartCanvas"></canvas>
-</section>
+        <div class="cards">
+            <div class="card">
+                <h3>Ameaças</h3>
+                <p id="threats">0</p>
+            </div>
 
-<section class="logs">
-    <h2>Logs</h2>
-    <ul id="logs"></ul>
-</section>
+            <div class="card">
+                <h3>Eventos</h3>
+                <p id="events">0</p>
+            </div>
+        </div>
 
-</main>
+        <div class="logs">
+            <h2>Logs</h2>
+            <ul id="logList"></ul>
+        </div>
+
+    </main>
+
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
